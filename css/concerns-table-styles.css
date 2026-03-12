@@ -1,0 +1,175 @@
+/* Page-specific styles for concerns-table.php */
+
+.table-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+.filter-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+.concerns-table tbody tr {
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+.concerns-table tbody tr:hover {
+            background: #f8fffe;
+        }
+.pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 25px;
+            padding: 20px;
+        }
+.pagination button {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+.pagination button:hover:not(:disabled) {
+            background: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+.pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+.no-results {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+        }
+/* Notification Bell Styles */
+.notif-bell {
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            padding: 5px 10px;
+            position: relative;
+        }
+.notif-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            background: #f8f9fa;
+        }
+.notif-header h4 { margin: 0; font-size: 14px; color: #333; }
+.mark-read-btn {
+            background: none;
+            border: none;
+            color: #4a7c2c;
+            font-size: 12px;
+            cursor: pointer;
+        }
+.notif-list {
+            max-height: 320px;
+            overflow-y: auto;
+        }
+.notif-item {
+            display: flex;
+            gap: 10px;
+            padding: 12px 15px;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+.notif-item:hover { background: #f5f5f5; }
+.notif-item.unread { background: #f0f7ec; }
+.notif-empty {
+            padding: 30px;
+            text-align: center;
+            color: #888;
+        }
+
+/* ==================== DARK MODE OVERRIDES ==================== */
+[data-theme="dark"] .concerns-table tbody tr:hover {
+    background: #1e2130 !important;
+}
+[data-theme="dark"] .pagination button {
+    background: #252836 !important;
+    color: #e2e8f0 !important;
+    border-color: #3a3d50 !important;
+}
+[data-theme="dark"] .pagination button:hover:not(:disabled) {
+    background: #4a7c2c !important;
+    border-color: #4a7c2c !important;
+    color: white !important;
+}
+[data-theme="dark"] .no-results {
+    color: #64748b !important;
+}
+[data-theme="dark"] .notif-header {
+    background: #1e2130 !important;
+    border-bottom-color: #2a2d3e !important;
+}
+[data-theme="dark"] .notif-header h4 {
+    color: #e2e8f0 !important;
+}
+[data-theme="dark"] .notif-item {
+    border-bottom-color: #2a2d3e !important;
+}
+[data-theme="dark"] .notif-item:hover {
+    background: #1e2130 !important;
+}
+[data-theme="dark"] .notif-item.unread {
+    background: #192618 !important;
+}
+[data-theme="dark"] .notif-empty {
+    color: #64748b !important;
+}
+[data-theme="dark"] .table-controls {
+    color: #e2e8f0 !important;
+}
+[data-theme="dark"] .concerns-table {
+    background: #1a1d27 !important;
+    border-radius: 12px;
+    overflow: hidden;
+}
+[data-theme="dark"] .concerns-table table {
+    background: #1a1d27 !important;
+}
+[data-theme="dark"] .concerns-table thead tr {
+    background: #1e2130 !important;
+}
+[data-theme="dark"] .concerns-table th {
+    background: #1e2130 !important;
+    color: #94a3b8 !important;
+    border-bottom-color: #2a2d3e !important;
+}
+[data-theme="dark"] .concerns-table tbody tr {
+    background: #1a1d27 !important;
+}
+[data-theme="dark"] .concerns-table tbody tr:hover {
+    background: #1e2130 !important;
+}
+[data-theme="dark"] .concerns-table td {
+    background: transparent !important;
+    color: #e2e8f0 !important;
+    border-top-color: #2a2d3e !important;
+    border-bottom-color: #2a2d3e !important;
+}
+[data-theme="dark"] #pageInfo {
+    color: #94a3b8 !important;
+}
+
+/* Keep category/status badge text readable on light badge backgrounds. */
+[data-theme="dark"] .concerns-table .badge,
+[data-theme="dark"] .concerns-table [class*="badge-"] {
+    color: #1f2937 !important;
+    opacity: 1 !important;
+}
